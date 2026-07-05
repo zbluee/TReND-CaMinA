@@ -26,53 +26,35 @@ This cell installs the allensdk and mounts the necessary data for the python env
 
 ![drive_path setup cell](support_files/drive_path_setup_cell.png)
 
-The important thing this cell does is set the “manifest_file” variable to point to the “manifest.json” file.  You *may* need to alter the “data_root” variable if you are on Windows or Linux, depending on how the hard drive is mounted.  For macOS and Colab this cell will *probably* work as written.  
+The important thing this cell does is set the “manifest_file” variable to point to the “manifest.json” file.  **You *may* need to alter the “data_root” variable if you are on Windows or Linux, depending on how the hard drive is mounted.**  For macOS and Colab this cell will *probably* work as written.  
 
-Importantly, you will need to set up a conda environment that has the appropriate versions of python, numpy, the allensdk, and other software.  Simply pip installing these packages will not work.  We have provided a file ‘environment.yml’ that should work. You can find this file at [environment.yml](support_files/environment.yml).  You can set up this environment with the following conda command:
+Importantly, you will need to set up a conda environment that has the appropriate versions of python, numpy, the allensdk, and other software. From your terminal, create a new enviroment:
 
 ```
-conda env create -f environment.yml -n trend2025
-```
-and then you can activate this environment with the following command:
-```
-conda activate trend2025
-```
-You should now be able to run the notebooks locally.
-
-
-3.  Allen Institute data copied locally to your laptop
-
-	
-If necessary, we have just the subset of the data that is being used in the tutorials available to be copied onto your laptop.  The instructors will provide this data for you.  It will be in a folder called ‘allen_brain_observatory’.  The files from the dataset that are needed are
-```
-/allen-brain-observatory
-	/visual-coding-2p
-		cell_specimens.json
-		experiment_containers.json
-		manifest.json
-		ophys_experiments.json
-		stimulus_mappings.json
-		/ophys_experiment_data
-			501559087.nwb
-			502793808.nwb
-			540684467.nwb
-```
-These can be copied from the hard drive to transfer to another laptop if for some reason the hard drives will not mount or don't work on a particular laptop.
-
-The setup is nearly identical to #2 above.  The difference is where the ‘manifest_file’ variable points.  Set ‘data_root’ to point to the location of ‘allen_brain_observatory’.
-```
-data_root = /path/to/allen_brain_observatory
-```
-and then copy the last two lines of the cell above in #2.
-```
-manifest_file = os.path.join(data_root,'allen-brain-observatory/visual-coding-2p/manifest.json')
-boc = BrainObservatoryCache(manifest_file=manifest_file)
+conda create -n trend2026 python=3.10 jupyter ipykernel
 ```
 
-4.  Downloading Allen Institute data. - NOT RECOMMENDED
+then you can activate this environment with this command:
+
+```
+conda activate trend2026
+```
+
+last, install the allensdk. You will need to copy and paste this line in your terminal:
+
+```
+pip install git+https://github.com/AllenInstitute/AllenSDK@1bdca3ad884c3a5edea8236161424650603e6f29 "numpy == 1.26.4" "pandas == 2.3.0" "matplotlib > 3.8.0" "statsmodels >= 0.14.4"
+```
+
+You should now be able to launch jupyter notebook and work with the notebooks locally. Whenever you return, make sure you have activated your trend2026 environment before launching the notebook.
+
+REMEMBER: do not run the very first cell that is only for Colab.
+
+
+3.  Downloading Allen Institute data. - NOT RECOMMENDED
 
 If necessary, you can download any data you need yourself.  To do this, assign ‘manifest_file’ to a location you want ‘manifest.json’ to be and then use the last line of the cell above.
 ```
 boc = BrainObservatoryCache(manifest_file=manifest_file)
 ```
-When you request data, it will be downloaded to your local machine.  For most analyses this will be prohibitive and we do not recommend it.  
+When you request data, it will be downloaded to your local machine.  For most analyses this will be prohibitively slow and we do not recommend it.  
