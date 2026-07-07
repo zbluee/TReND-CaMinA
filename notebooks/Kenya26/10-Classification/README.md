@@ -3,7 +3,7 @@
 Machine Learning methods for neural data analysis
 - Classification
 - Nearest Neighbors
-- Logistic regression
+- Logistic Regression
 
 
 ## Python specific libraries and dependencies
@@ -11,3 +11,4 @@ Machine Learning methods for neural data analysis
 - scipy
 - matplotlib
 - ipywidgets
+- plotly
