@@ -1,10 +1,10 @@
 ## Teaching topics
 
 Regression, Deep Learning and Backpropagation
-- Deep Learning Tutorial networks has been added as a [submodule](./DeepLearningTutorial/). Click the link to find it or, if you are running this locally, download the contents with: `git submodule init; git submodule update`
+- Deep Learning Tutorial networks has been added as a [submodule](./DeepLearningTutorial/). 
 
+Note if running this locally you will need to download these submodules which you can do by calling 
 
-## Python specific libraries and dependencies
-- Deep Learning Tutorial dependencies are downloaded within the jupyter notebook. 
-- Requirements: RatInABox, tqdm and PyTorch
+```git submodule update --init```
 
+If that fails, navigate directly to the repository [here](https://github.com/TomGeorge1234/DeepLearningTutorial)

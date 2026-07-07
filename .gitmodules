@@ -13,3 +13,9 @@
 [submodule "notebooks/Zambia25/18-Fri-Regression-DeepLearning/DeepLearningTutorial"]
 	path = notebooks/Zambia25/18-Fri-Regression-DeepLearning/DeepLearningTutorial
 	url = https://github.com/TomGeorge1234/DeepLearningTutorial
+[submodule "notebooks/Kenya26/08-HopfieldNetworks/HopfieldNetworkTutorial"]
+	path = notebooks/Kenya26/08-HopfieldNetworks/HopfieldNetworkTutorial
+	url = https://github.com/TomGeorge1234/HopfieldNetworkTutorial
+[submodule "notebooks/Kenya26/11-Regression-DeepLearning/DeepLearningTutorial"]
+	path = notebooks/Kenya26/11-Regression-DeepLearning/DeepLearningTutorial
+	url = https://github.com/TomGeorge1234/DeepLearningTutorial
